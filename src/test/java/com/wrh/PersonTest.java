@@ -59,9 +59,9 @@ public class PersonTest {
 
     @Test
     public void add(){
-        sqlSession = MybatisUtil.getSqlSession(true);
+        sqlSession = MybatisUtil.getSqlSession();
         PersonMapper personMapper = sqlSession.getMapper(PersonMapper.class);
-        int id = 1001;
+        int id = 1002;
         String userName = "wojiushimogui";
         int age = 19;
         String mobilePhone = "18000000001";
@@ -72,6 +72,7 @@ public class PersonTest {
         person.setMobilePhone(mobilePhone);
         try{
             int add = personMapper.add(person);
+            sqlSession.commit();
             System.out.println("add = " + add);
         }catch (Exception e){
             e.printStackTrace();

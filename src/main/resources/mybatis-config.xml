@@ -23,6 +23,7 @@
         <!--
         userMapper.xml位于mapper这个包下，所以resource写成mapper/Person.xml -->
         <mapper resource="mapper/Person.xml"/>
+        <mapper resource="mapper/StudentMapper.xml"/>
 
         <mapper class="com.wrh.mapper.PersonMapper"/>
     </mappers>
