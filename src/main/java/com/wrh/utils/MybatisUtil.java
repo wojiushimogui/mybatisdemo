@@ -40,6 +40,14 @@ public class MybatisUtil {
     public static SqlSession getSqlSession(){
         return sqlSessionFactory.openSession();
     }
+
+    /**
+     * 获取SqlSession，可以设置是否自动commit
+     * @return SqlSession
+     */
+    public static SqlSession getSqlSession(boolean isAutoCommit){
+        return sqlSessionFactory.openSession(isAutoCommit);
+    }
     /**
      * 关闭SqlSession
      */
